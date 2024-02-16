@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Unsupervised open-vocabulary object localization in videos.">
+  <meta name="keywords" content="Object Localization, Object-centric Learning, Slot Attention">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unsupervised open-vocabulary object localization in videos</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+<!--  <link rel="icon" href="./static/images/favicon.svg">-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://kfan21.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Object-Centric VOL
+          <br />Unsupervised Open-Vocabulary Object Localization in Videos</h1>
+          <h2><font color="gray" size="5">ICCV 2023</font></h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://kfan21.github.io/">Ke Fan</a><sup>1,*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.baizechen.site/">Zechen Bai</a><sup>2,*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://tianjunxiao.com/">Tianjun Xiao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.dominikzietlow.com/">Dominik Zietlow</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://expectationmax.github.io/">Max Horn</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zxzhaoeric.github.io/">Zixu Zhao</a><sup>2</sup>,
+            </span><br />
+            <span class="author-block">
+              <a href="https://las.inf.ethz.ch/people/carljohann-simongabriel">Carl-Johann Simon-Gabriel</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.comp.nus.edu.sg/cs/people/mikeshou/">Mike Zheng Shou</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.francescolocatello.com/">Francesco Locatello</a><sup>2</sup>,
+            </span><br />
+            <span class="author-block">
+              <a href="https://www.mpg.de/322861/informatics-schiele">Bernt Schiele</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lmb.informatik.uni-freiburg.de/people/brox/index.en.html">Thomas Brox</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=k0KiE4wAAAAJ">Zheng Zhang</a><sup>2,†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://yanweifu.github.io/">Yanwei Fu</a><sup>1,†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://hetong007.github.io/">Tong He</a><sup>2</sup>
+            </span>
+            
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Fudan University, <sup>2</sup>Amazon Web Service, <sup>3</sup>National University of Singapore</span>
+            
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2309.09858"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/amazon-science/object-centric-vol"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we show that recent advances in video representation learning and pre-trained vision-language models allow for substantial improvements in self-supervised video object localization.
+            We propose a method that first localizes objects in videos via a slot attention approach and then assigns text to the obtained slots.
+            The latter is achieved by an unsupervised way to read localized semantic information from the pre-trained CLIP model.
+            The resulting video object localization is entirely unsupervised apart from the implicit annotation contained in CLIP, and it is effectively the first unsupervised approach that yields good results on regular video benchmarks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <center>
+        <h2 class="title is-3">Model Pipeline</h2>
+        <img src="./Pipeline.png" width="100%"/>
+      </center>
+      <p>
+        We propose an unsupervised video object localization method that first localizes objects in videos via a slot attention approach and then assigns text to the obtained slots.
+        The latter is achieved by an unsupervised way to read localized semantic information from the pre-trained CLIP model.
+        The resulting video object localization is entirely unsupervised apart from the implicit annotation contained in CLIP. 
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    
+    <div class="hero-body">
+      <center>
+        <h2 class="title is-3">Results</h2>
+        <img src="./FrameResults.jpg" width="90%"/>
+      </center>
+      <p>We uses slot attention in feature space to localize tubes (second column),
+        assigns text to the slot features via a CLIP model that was modified to allow local feature alignment (third column),
+        and finally merges slots that overlap in text space (last column)</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @InProceedings{Fan_2023_ICCV,
+        author    = {Fan, Ke and Bai, Zechen and Xiao, Tianjun and Zietlow, Dominik and Horn, Max and Zhao, Zixu and Simon-Gabriel, Carl-Johann and Shou, Mike Zheng and Locatello, Francesco and Schiele, Bernt and Brox, Thomas and Zhang, Zheng and Fu, Yanwei and He, Tong},
+        title     = {Unsupervised Open-Vocabulary Object Localization in Videos},
+        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+        month     = {October},
+        year      = {2023},
+        pages     = {13747-13755}
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2309.09858">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/amazon-science/object-centric-vol" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
